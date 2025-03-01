@@ -1,0 +1,87 @@
+/* Base styles (Mobile-first approach) */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+body {
+    background-color: #dedede;
+    padding: 5px;
+    margin: 15px;
+    font-size: 25px;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.95em;
+}
+
+h2 {
+    text-align: center;
+}
+
+li {
+    margin-top: 20px;
+}
+
+img {
+    border: 5px solid blue;
+    border-radius: 35px;
+    width: 100%;
+}
+
+.label {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Mobile View (Default) */
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.grid-container div {
+    width: 100%;
+    text-align: center;
+}
+
+/* First media query: 772px - Set divs to 45vw */
+@media (min-width: 772px) {
+    .grid-container div {
+        width: 45vw;
+    }
+
+    img {
+        max-height: 30vh;
+    }
+}
+
+/* Second media query: 998px - Set divs to 30vw */
+@media (min-width: 998px) {
+    .grid-container div {
+        width: 30vw;
+    }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #222; /* Dark background */
+        color: #f1c40f; /* Yellowish text */
+    }
+
+    .grid-container div {
+        background-color: #333; /* Dark div background */
+        color: #f1c40f; /* Light text */
+        border: 3px solid black; /* Black border */
+    }
+}
